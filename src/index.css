@@ -1,6 +1,15 @@
+html {
+  height: 100%;
+}
+
 body {
   font: 14px "Century Gothic", Futura, sans-serif;
   margin: 20px;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: orange;
 }
 
 ol,
@@ -52,4 +61,5 @@ ul {
 
 .highlight {
   color: yellowgreen;
+  background-color: aqua;
 }
