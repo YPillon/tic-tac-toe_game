@@ -1,5 +1,5 @@
 * {
-  color: #252525;
+  color: #322514;
 }
 
 html {
@@ -8,17 +8,22 @@ html {
 
 body {
   font: 14px "Century Gothic", Futura, sans-serif;
-  margin: 20px;
+  margin: 0px;
   height: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: #6eeb83;
+  background: #322514;
+  background: linear-gradient(#322514, #fbcbc9);
 }
 
 ol,
 ul {
   padding-left: 0px;
+}
+
+.app {
+  height: 100%;
 }
 
 .board-row:after {
@@ -28,7 +33,11 @@ ul {
 }
 
 .status {
-  margin-bottom: 10px;
+  margin-bottom: 20px;
+  width: fit-content;
+  padding: 5px;
+  color: #fbcbc9;
+  border-radius: 4px;
 }
 
 .square {
@@ -44,6 +53,7 @@ ul {
   padding: 0;
   text-align: center;
   width: 100px;
+  background-color: #fbcbc9;
 }
 
 .square:focus {
@@ -69,14 +79,129 @@ ul {
 
 .button {
   border-radius: 4px;
-  background-color: #1be7ff;
-  border: #6eeb83 2px solid;
+  background: linear-gradient(to right bottom, #fbcbc9, #be1558 95%);
+  margin-bottom: 4px;
+  border: none;
+  box-shadow: #fbcbc9 1px 1px 3px;
+}
+
+.buttonSwitch {
+  margin-top: 10px;
+  padding: 10px;
 }
 
 .fontSize {
-  font-size: 20px;
+  font-size: 1.4rem;
+}
+
+@keyframes scale {
+  0% {
+    transform: scale(1);
+  }
+  40% {
+    transform: scale(1.2);
+  }
+  60% {
+    transform: scale(1.2);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes hop {
+  0% {
+    transform: translateY(0);
+  }
+  40% {
+    transform: translateY(-20px);
+  }
+  60% {
+    transform: translateY(0px);
+    transform-origin: bottom;
+    transform: scale(1.1, 0.75);
+  }
+  70% {
+    transform: translateY(0px);
+    transform-origin: bottom;
+    transform: scale(1.2, 0.5);
+  }
+  95% {
+    transform: translateY(0px);
+    transform-origin: bottom;
+    transform: scale(0.9, 1.1);
+  }
+  100% {
+    transform-origin: bottom;
+    transform: scale(1, 1);
+  }
+}
+
+@keyframes haloText {
+  0% {
+    text-shadow: #fbcbc9 2px 2px 10px;
+  }
+  50% {
+    text-shadow: #fbcbc9 6px 6px 20px;
+    filter: saturate(200%);
+  }
+  100% {
+    text-shadow: #fbcbc9 2px 2px 10px;
+  }
+}
+
+@keyframes haloBox {
+  0% {
+    box-shadow: #fbcbc9 2px 2px 10px;
+  }
+  50% {
+    box-shadow: #fbcbc9 6px 6px 20px;
+    filter: saturate(200%);
+  }
+  100% {
+    box-shadow: #fbcbc9 2px 2px 10px;
+  }
+}
+
+@keyframes toHalo {
+  0% {
+  }
+  100% {
+    box-shadow: #fbcbc9 2px 2px 10px;
+  }
+}
+
+.haloText {
+  animation: haloText linear 3s infinite;
+}
+
+.animationComplex {
+  animation: hop 0.7s, rotate 0.5s 0.7s, scale 1s 1.2s, toHalo 2s 2.2s,
+    haloBox 3s 4.2s linear infinite;
+}
+
+.jump {
+  animation: hop 0.7s;
 }
 
 .highlight {
-  background-color: #e4ff1a;
+  background: linear-gradient(to left bottom, #fbcbc9, #e75874);
+  color: #322514;
+}
+
+.footer {
+  text-align: center;
+  padding-bottom: 20px;
+  position: absolute;
+  bottom: 20px;
+  font-size: 1rem;
 }

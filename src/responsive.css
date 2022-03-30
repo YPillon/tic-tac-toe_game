@@ -1,10 +1,21 @@
 @media screen and (max-width: 1023px) {
-  ol, ul {
-      padding-left: 15px;
+  html {
+    height: 132%;
   }
-  
-    #root {
+
+  ol,
+  ul {
+    padding-left: 15px;
+  }
+
+  #root {
     height: 100%;
+  }
+
+  .app {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
   }
 
   .game {
@@ -12,12 +23,11 @@
     align-items: center;
     justify-content: flex-start;
     height: 100%;
-    padding-top: 60px;
   }
 
   .game-board {
     margin-bottom: 45px;
-    
+    padding-top: 75px;
   }
 
   .game-info {
@@ -28,9 +38,12 @@
   }
 
   .square {
+    font-size: 45px;
+    height: 70px;
+    width: 70px;
+  }
 
-  font-size: 45px;
-  height: 70px;
-  width: 70px;
+  .footer {
+    position: initial;
   }
 }

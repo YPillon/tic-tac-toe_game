@@ -19,7 +19,7 @@ class Board extends React.Component {
     return (
       <Square
         className={
-          this.props.winnerIndexes.indexOf(i) !== -1 ? "highlight" : ""
+          this.props.winnerIndexes.indexOf(i) !== -1 ? "highlight jump" : ""
         }
         key={"square " + i}
         value={this.props.squares[i]}
@@ -128,7 +128,7 @@ class Game extends React.Component {
       const desc = move
         ? "Go to move #" +
           move +
-          ` (col : ${step.lastMove.col}, row : ${step.lastMove.row})`
+          ` (${step.lastMove.col}, ${step.lastMove.row})`
         : "Go to game start";
 
       return (
@@ -171,10 +171,9 @@ class Game extends React.Component {
             className={
               "fontSize status " +
               ((!winner && this.state.stepNumber === 9) || winner
-                ? "highlight"
-                : "")
+                ? "highlight animationComplex"
+                : "haloText")
             }
-            style={{ width: 'fit-content' }}
           >
             {status}
           </div>
@@ -185,9 +184,9 @@ class Game extends React.Component {
           )}
           <button
             onClick={() => this.switchHistoryOrder()}
-            className="fontSize button"
+            className="fontSize button buttonSwitch"
           >
-            Switch history order
+            Switch history order ↕️
           </button>
         </div>
       </div>
@@ -195,9 +194,38 @@ class Game extends React.Component {
   }
 }
 
+class Footer extends React.Component {
+  render() {
+    const date = new Date().getFullYear();
+    return (
+      <div className="footer">
+        <p>
+          ©️ {date} | Designed & coded by{" "}
+          <a
+            href="https://www.younespillon.com"
+            target="_blank"
+            rel="noreferrer"
+          >
+            Younes Pillon
+          </a>
+        </p>
+      </div>
+    );
+  }
+}
+
+function App(props) {
+  return (
+    <div className="app">
+      <Game />
+      <Footer />
+    </div>
+  );
+}
+
 // ========================================
 
-ReactDOM.render(<Game />, document.getElementById("root"));
+ReactDOM.render(<App />, document.getElementById("root"));
 
 function calculateWinner(squares) {
   const lines = [
