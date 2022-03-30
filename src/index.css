@@ -1,5 +1,10 @@
+* {
+  color: #252525;
+}
+
 html {
   height: 100%;
+  overflow-y: hidden;
 }
 
 body {
@@ -9,12 +14,12 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: orange;
+  background-color: #6eeb83;
 }
 
 ol,
 ul {
-  padding-left: 30px;
+  padding-left: 0px;
 }
 
 .board-row:after {
@@ -31,15 +36,15 @@ ul {
   background: #fff;
   border: 1px solid #999;
   float: left;
-  font-size: 24px;
+  font-size: 65px;
   font-weight: bold;
-  line-height: 34px;
-  height: 34px;
+  line-height: 70px;
+  height: 100px;
   margin-right: -1px;
   margin-top: -1px;
   padding: 0;
   text-align: center;
-  width: 34px;
+  width: 100px;
 }
 
 .square:focus {
@@ -53,13 +58,26 @@ ul {
 .game {
   display: flex;
   flex-direction: row;
+  align-items: flex-start;
 }
 
 .game-info {
-  margin-left: 20px;
+  width: 330px;
+  position: absolute;
+  top: 70px;
+  left: 70px;
+}
+
+.button {
+  border-radius: 4px;
+  background-color: #1be7ff;
+  border: #6eeb83 2px solid;
+}
+
+.fontSize {
+  font-size: 20px;
 }
 
 .highlight {
-  color: yellowgreen;
-  background-color: aqua;
+  background-color: #e4ff1a;
 }

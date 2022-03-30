@@ -1,6 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import "./index.css";
+import "./responsive.css";
 
 function Square(props) {
   return (
@@ -134,9 +135,12 @@ class Game extends React.Component {
         <li key={move}>
           <button
             onClick={() => this.jumpTo(move)}
-            className={move === this.state.stepNumber ? "highlight" : ""}
+            className={
+              "fontSize button " +
+              (move === this.state.stepNumber ? "highlight" : "")
+            }
           >
-            {move === this.state.stepNumber ? <b>{desc}</b> : desc}
+            {desc}
           </button>
         </li>
       );
@@ -146,7 +150,7 @@ class Game extends React.Component {
 
     let status;
     if (winner) {
-      status = "The winner is " + winner.name;
+      status = `The winner is ${winner.name}!`;
     } else if (!winner && this.state.stepNumber === 9) {
       status = "This is a draw!";
     } else {
@@ -163,13 +167,26 @@ class Game extends React.Component {
           />
         </div>
         <div className="game-info">
-          <div>{status}</div>
+          <div
+            className={
+              "fontSize status " +
+              ((!winner && this.state.stepNumber === 9) || winner
+                ? "highlight"
+                : "")
+            }
+            style={{ width: 'fit-content' }}
+          >
+            {status}
+          </div>
           {this.state.isOrderDescending ? (
             <ol reversed>{reversedMoves}</ol>
           ) : (
             <ol>{moves}</ol>
           )}
-          <button onClick={() => this.switchHistoryOrder()}>
+          <button
+            onClick={() => this.switchHistoryOrder()}
+            className="fontSize button"
+          >
             Switch history order
           </button>
         </div>
