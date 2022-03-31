@@ -20,6 +20,19 @@ body {
 ol,
 ul {
   padding-left: 0px;
+  list-style-type: none;
+}
+
+ol:not([reversed]) > li:first-child button {
+  margin-bottom: 15px;
+  padding: 10px;
+  font-weight: bold;
+}
+
+ol[reversed] > li:last-child button {
+  margin-top: 15px;
+  padding: 10px;
+  font-weight: bold;
 }
 
 .app {
@@ -33,7 +46,7 @@ ul {
 }
 
 .status {
-  margin-bottom: 20px;
+  margin-bottom: 10%;
   width: fit-content;
   padding: 5px;
   color: #fbcbc9;

@@ -5,7 +5,11 @@
 
   ol,
   ul {
-    padding-left: 15px;
+    padding-left: 0px;
+  }
+
+  ol > li {
+    text-align: center;
   }
 
   #root {
