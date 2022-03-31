@@ -8,13 +8,13 @@ html {
 
 body {
   font: 14px "Century Gothic", Futura, sans-serif;
-  margin: 0px;
+  margin: 15px;
   height: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
   background: #322514;
-  background: linear-gradient(#322514, #fbcbc9);
+  background: linear-gradient(#322514, #fbcbc9) fixed;
 }
 
 ol,
@@ -68,6 +68,7 @@ ul {
   display: flex;
   flex-direction: row;
   align-items: flex-start;
+  margin-bottom: 20px;
 }
 
 .game-info {
@@ -203,5 +204,5 @@ ul {
   padding-bottom: 20px;
   position: absolute;
   bottom: 20px;
-  font-size: 1rem;
+  font-size: 1.2rem;
 }
