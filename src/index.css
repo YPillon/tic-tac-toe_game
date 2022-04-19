@@ -10,10 +10,6 @@ body {
   font: 14px "Century Gothic", Futura, sans-serif;
   margin: 15px;
   height: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background: #322514;
   background: linear-gradient(#322514, #fbcbc9) fixed;
 }
 
@@ -35,8 +31,17 @@ ol[reversed] > li:last-child button {
   font-weight: bold;
 }
 
+#root {
+  display: flex;
+  justify-content: center;
+  height: 100%;
+}
+
 .app {
   height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .board-row:after {
